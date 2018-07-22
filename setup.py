@@ -20,7 +20,7 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     url='http://github/erikvw/edc-form-describer',
-    license='GPL licence, see LICENCE',
+    license='GPL license, see LICENSE',
     description='Describe clinicedc/edc forms in markdown',
     long_description=README,
     zip_safe=False,
