@@ -25,6 +25,7 @@ setup(
     long_description=README,
     zip_safe=False,
     keywords='django edc forms to markdown',
+    install_requires=["edc_model", "edc_fieldsets"],
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
