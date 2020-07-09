@@ -9,7 +9,7 @@ from edc_test_utils import DefaultTestSettings
 from os.path import abspath, dirname
 
 
-app_name = 'edc_form_describer'
+app_name = "edc_form_describer"
 base_dir = dirname(abspath(__file__))
 
 DEFAULT_SETTINGS = DefaultTestSettings(
@@ -17,15 +17,15 @@ DEFAULT_SETTINGS = DefaultTestSettings(
     APP_NAME=app_name,
     BASE_DIR=base_dir,
     INSTALLED_APPS=[
-        'django.contrib.admin',
-        'django.contrib.auth',
-        'django.contrib.contenttypes',
-        'django.contrib.sessions',
-        'django.contrib.messages',
-        'django.contrib.staticfiles',
-        'django.contrib.sites',
-        'django_revision.apps.AppConfig',
-        'edc_form_describer',
+        "django.contrib.admin",
+        "django.contrib.auth",
+        "django.contrib.contenttypes",
+        "django.contrib.sessions",
+        "django.contrib.messages",
+        "django.contrib.staticfiles",
+        "django.contrib.sites",
+        "django_revision.apps.AppConfig",
+        "edc_form_describer",
     ],
     add_dashboard_middleware=True,
     # use_test_urls=True,
@@ -36,11 +36,10 @@ def main():
     if not settings.configured:
         settings.configure(**DEFAULT_SETTINGS)
     django.setup()
-    failures = DiscoverRunner(failfast=True).run_tests(
-        [f'{app_name}.tests'])
+    failures = DiscoverRunner(failfast=True).run_tests([f"{app_name}.tests"])
     sys.exit(failures)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     logging.basicConfig()
     main()
