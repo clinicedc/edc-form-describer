@@ -19,7 +19,7 @@ setup(
     author_email="ew2789@gmail.com",
     packages=find_packages(),
     include_package_data=True,
-    url="http://github/erikvw/edc-form-describer",
+    url="http://github/clinicedc/edc-form-describer",
     license="GPL license, see LICENSE",
     description="Describe clinicedc/edc forms in markdown",
     long_description=README,
