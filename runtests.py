@@ -46,7 +46,6 @@ DEFAULT_SETTINGS = DefaultTestSettings(
         "edc_form_describer.apps.AppConfig",
     ],
     add_dashboard_middleware=True,
-    # use_test_urls=True,
 ).settings
 
 
