@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import logging
 import sys
-from os.path import abspath, dirname
+from os.path import abspath, dirname, join
 
 import django
 from django.conf import settings
@@ -15,6 +15,7 @@ DEFAULT_SETTINGS = DefaultTestSettings(
     calling_file=__file__,
     APP_NAME=app_name,
     BASE_DIR=base_dir,
+    ETC_DIR=join(base_dir, app_name, "tests", "etc"),
     INSTALLED_APPS=[
         "django.contrib.admin",
         "django.contrib.auth",
