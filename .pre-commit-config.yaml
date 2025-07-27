@@ -20,7 +20,7 @@ repos:
     hooks:
       - id: flake8
         args:
-          - "--config=setup.cfg"
+          - "--config=.flake8"
 
   - repo: https://github.com/PyCQA/isort
     rev: 6.0.1
@@ -50,3 +50,13 @@ repos:
       - id: yamllint
         args:
           - "--strict"
+
+#  - repo: https://github.com/fpgmaas/deptry.git
+#    rev: "0.23.0"
+#    hooks:
+#      - id: deptry
+#        args: [
+#          "--extend-exclude", "runtests.py",
+#          "--extend-exclude", ".*/tests/test_settings.py",
+#          "--extend-exclude", "tests/test_settings.py"
+#        ]

@@ -50,28 +50,29 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
-      - name: Get pip cache dir
-        id: pip-cache
-        run: |
-          echo "dir=$(pip cache dir)" >>$GITHUB_OUTPUT
+      - name: Get uv cache dir
+        id: uv-cache
+        run: echo "dir=$(uv pip cache dir)" >> $GITHUB_OUTPUT
 
-      - name: Cache
+      - name: Cache uv dependencies
         uses: actions/cache@v4
         with:
-          path: ${{ steps.pip-cache.outputs.dir }}
-          key:
-            ${{ matrix.python-version }}-v1-${{ hashFiles('**/setup.py') }}-${{ hashFiles('**/tox.ini') }}
+          path: ${{ steps.uv-cache.outputs.dir }}
+          key: uv-${{ matrix.python-version }}-${{ hashFiles('**/pyproject.toml') }}-${{ hashFiles('**/tox.ini') }}
           restore-keys: |
-            ${{ matrix.python-version }}-v1-
+            uv-${{ matrix.python-version }}-
 
-      - name: Install dependencies
+      - name: Install uv and tox
         run: |
-          python -m pip install --upgrade pip
-          python -m pip install -r https://raw.githubusercontent.com/clinicedc/edc/develop/requirements.tests/tox.txt
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          uv tool install tox --with tox-uv
+
+      - name: Verify tox plugins
+        run: uv tox --version
 
       - name: Tox tests
         run: |
-          tox -v
+          uv tox -v
         env:
           DJANGO: ${{ matrix.django-version }}
 
