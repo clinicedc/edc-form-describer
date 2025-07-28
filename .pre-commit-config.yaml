@@ -9,23 +9,23 @@ repos:
         args:
           - "-x *test*.py"
 
-  - repo: https://github.com/psf/black
-    rev: 25.1.0
-    hooks:
-      - id: black
-        language_version: python3.12
-
-  - repo: https://github.com/pycqa/flake8
-    rev: 7.3.0
-    hooks:
-      - id: flake8
-        args:
-          - "--config=.flake8"
-
-  - repo: https://github.com/PyCQA/isort
-    rev: 6.0.1
-    hooks:
-      - id: isort
+#  - repo: https://github.com/psf/black
+#    rev: 25.1.0
+#    hooks:
+#      - id: black
+#        language_version: python3.12
+#
+#  - repo: https://github.com/pycqa/flake8
+#    rev: 7.3.0
+#    hooks:
+#      - id: flake8
+#        args:
+#          - "--config=.flake8"
+#
+#  - repo: https://github.com/PyCQA/isort
+#    rev: 6.0.1
+#    hooks:
+#      - id: isort
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0
@@ -50,6 +50,15 @@ repos:
       - id: yamllint
         args:
           - "--strict"
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.12.5
+    hooks:
+      - id: ruff
+        types_or: [python, pyi]
+        args: [--fix]
+      - id: ruff-format
+        types_or: [python, pyi]
 
 #  - repo: https://github.com/fpgmaas/deptry.git
 #    rev: "0.23.0"
