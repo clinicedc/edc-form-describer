@@ -1,6 +1,9 @@
+.idea
+.tox
 _version.py
 .etc
 .env
+db.sqlite3
 django_crypto_fields
 .pydevproject
 .project

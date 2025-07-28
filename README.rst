@@ -10,9 +10,9 @@ names, choices, etc.
 
 For example::
 
-    >>> python manage.py make_forms_reference \
+    python manage.py make_forms_reference \
         --app_label effect_subject \
-        --admin_site effect_subject_admin
+        --admin_site effect_subject_admin \
         --visit_schedule visit_schedule
 
 
