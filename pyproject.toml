@@ -69,6 +69,7 @@ exclude_lines = [
 lint = [
     "black>=25.1.0",
     "deptry>=0.23.0",
+    "flake8>=7.3.0",
     "isort>=6.0.1",
     "ruff>=0.12.5",
 ]
