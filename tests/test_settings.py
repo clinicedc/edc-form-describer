@@ -16,6 +16,7 @@ project_settings = DefaultTestSettings(
     HOLIDAY_FILE=base_dir / "tests" / "holidays.csv",
     # ROOT_URLCONF="tests.urls",
     DJANGO_REVISION_IGNORE_WORKING_DIR=True,
+    DJANGO_CRYPTO_FIELDS_KEY_PATH=base_dir / "tests" / "etc",
     SILENCED_SYSTEM_CHECKS=[
         "sites.E101",
         "edc_navbar.E002",
