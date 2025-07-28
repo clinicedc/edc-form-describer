@@ -1,6 +1,6 @@
 [project]
 name = "edc-form-describer"
-version = "1.0.1"
+version = "1.0.2"
 description = "Describe clinicedc/edc forms in markdown"
 readme = "README.rst"
 keywords = [
